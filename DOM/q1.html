@@ -1,0 +1,22 @@
+<!--  1. Create a JavaScript function that adds a new heading element with the text "This is a new heading" to the document body. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button onclick="addHeading()">Add Heading</button>
+
+  <script>
+    function addHeading() {
+      const newHeading = document.createElement("h1"); 
+      newHeading.textContent = "This is a new heading"; 
+      document.body.appendChild(newHeading); 
+    }
+
+  </script>
+</body>
+</html>

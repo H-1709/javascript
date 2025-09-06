@@ -1,0 +1,24 @@
+<!-- 2. Create a JavaScript function that adds a new image element with the src attribute set to the URL of an image to the document body. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button onclick="addImage()">Add Image</button>
+
+  <script>
+    function addImage() {
+      const newImg = document.createElement("img"); 
+      newImg.src = ""; // ✅ set image URL
+      newImg.alt = "Image Added !"; 
+
+      document.body.appendChild(newImg); // add image to body
+    }
+  
+  </script>
+</body>
+</html>

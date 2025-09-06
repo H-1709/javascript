@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+         #container{
+            width: 200px;
+            height: 200px;
+            border: 2px solid black;
+            overflow: auto;
+            padding: 10px;
+            margin-top: 20px;
+        }
+    </style>
+
+  </head>
+  <body>
+    <h1 id="title">Welcome !</h1>
+    <p id="message">Click the Button to see DOM action</p>
+    <button id="actionbtn">Click ME</button>
+    <div id="container"></div>
+  </body>
+
+  <script>
+    let title = document.getElementById("title");
+    let message = document.getElementById("message");
+    const button = document.getElementById("actionbtn");
+    const container = document.getElementById("container");
+    button.addEventListener("click", () => {
+      title.textContent = "DOM Updated !";
+
+      message.style.color = "red";
+      message.textContent = "You clicked the button";
+
+      const newPara = document.createElement("p");
+      newPara.textContent = "This Paragraph was added";
+      newPara.classList.add("new");
+      container.appendChild(newPara);
+    });
+  </script>
+</html>
+
