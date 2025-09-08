@@ -1,0 +1,23 @@
+<!-- 6. Write a JavaScript function that adds a new paragraph element to the document body with the text passed as an argument. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Paragraph</title>
+</head>
+<body>
+  <button onclick="addParagraph('Hello, this is my new paragraph!')">Add Paragraph</button>
+
+  <script>
+    function addParagraph(text) {
+      // Create a new <p> element
+      const p = document.createElement("p");
+      // Add the text inside the <p>
+      p.textContent = text;
+      // Append it to the document body
+      document.body.appendChild(p);
+    }
+  </script>
+</body>
+</html>
