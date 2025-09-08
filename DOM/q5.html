@@ -1,0 +1,37 @@
+<!-- 5. Create a JavaScript function that adds a new table element with two rows and three columns to the document body. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Add Table Example</title>
+</head>
+<body>
+  <button onclick="addTable()">Add Table</button>
+
+  <script>
+    function addTable() {
+      // Create table element
+      let table = document.createElement("table");
+      table.border = "1"; // Add simple border for visibility
+
+      // Loop for 2 rows
+      for (let i = 0; i < 2; i++) {
+        let row = document.createElement("tr");
+
+        // Loop for 3 columns
+        for (let j = 0; j < 3; j++) {
+          let cell = document.createElement("td");
+          cell.textContent = `Row ${i + 1}, Col ${j + 1}`;
+          row.appendChild(cell);
+        }
+
+        table.appendChild(row);
+      }
+
+      // Append table to the body
+      document.body.appendChild(table);
+    }
+  </script>
+</body>
+</html>
