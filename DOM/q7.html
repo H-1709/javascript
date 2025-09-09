@@ -1,0 +1,25 @@
+<!-- 7. Write a JavaScript function that adds a new paragraph element to the document body with the text "This is a new paragraph" if the user clicks on a button. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <button onclick="addParagraph()">Add Paragraph</button>
+
+  <script>
+    function addParagraph() {
+      // Create a new paragraph element
+      let p = document.createElement("p");
+
+      // Add text inside it
+      p.textContent = "This is a new paragraph";
+
+      // Append paragraph to body
+      document.body.appendChild(p);
+    }
+  </script>
+</body>
+</html>
