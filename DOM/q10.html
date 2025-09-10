@@ -1,0 +1,28 @@
+<!-- 10. Write a JavaScript function that removes all the paragraph elements from the document body. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Remove Paragraphs</title>
+</head>
+<body>
+  <h2>Remove All Paragraphs Example</h2>
+  
+  <p>This is paragraph 1</p>
+  <p>This is paragraph 2</p>
+  <p>This is paragraph 3</p>
+
+  <button onclick="removeParagraphs()">Remove All Paragraphs</button>
+
+  <script>
+    function removeParagraphs() {
+      // Select all paragraph elements
+      let paragraphs = document.querySelectorAll("p");
+
+      // Loop through and remove each
+      paragraphs.forEach(p => p.remove());
+    }
+  </script>
+</body>
+</html>

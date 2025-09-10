@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BOM Operations Demo</title>
+</head>
+<body>
+  <h2>🚀 BOM (Browser Object Model) Operations Demo</h2>
+
+  <button onclick="showAlert()">Show Alert</button>
+  <button onclick="askName()">Ask Name (Prompt)</button>
+  <button onclick="confirmAction()">Confirm Action</button>
+  <button onclick="showLocation()">Show Current URL</button>
+  <button onclick="reloadPage()">Reload Page</button>
+  <button onclick="openWindow()">Open New Window</button>
+  <button onclick="showScreenInfo()">Show Screen Info</button>
+  <button onclick="showNavigatorInfo()">Show Browser Info</button>
+
+  <div id="output" style="margin-top:20px; padding:10px; border:1px solid #ccc;"></div>
+
+  <script>
+    function showAlert() {
+      alert("Hello! This is an Alert box (BOM example).");
+    }
+
+    function askName() {
+      let name = prompt("What is your name?");
+      document.getElementById("output").innerHTML = "Hello, " + name + "!";
+    }
+
+    function confirmAction() {
+      let choice = confirm("Do you want to continue?");
+      if (choice) {
+        document.getElementById("output").innerHTML = "You clicked OK!";
+      } else {
+        document.getElementById("output").innerHTML = "You clicked Cancel!";
+      }
+    }
+
+    function showLocation() {
+      document.getElementById("output").innerHTML = "Current Page URL: " + location.href;
+    }
+
+    function reloadPage() {
+      location.reload();
+    }
+
+    function openWindow() {
+      window.open("https://www.google.com", "_blank", "width=600,height=400");
+    }
+
+    function showScreenInfo() {
+      document.getElementById("output").innerHTML =
+        "Screen Width: " + screen.width + "px, Height: " + screen.height + "px";
+    }
+
+    function showNavigatorInfo() {
+      document.getElementById("output").innerHTML =
+        "Browser Info: " + navigator.userAgent;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+
+<!-- 1. Show an alert box with your name. Answer: alert("My name is Rahul");  -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BOM Example</title>
+</head>
+<body>
+  <h2>Basic BOM Example</h2>
+  <button onclick="showName()">Click Me</button>
+
+  <script>
+    function showName() {
+      // Basic BOM operation → using window.alert()
+      alert("My name is Rahul");
+
+      // More BOM examples
+      console.log("Browser Info:", navigator.userAgent); // Browser details
+      console.log("Screen Size:", screen.width + "x" + screen.height); // Screen resolution
+      console.log("Current URL:", location.href); // Current page URL
+    }
+  </script>
+</body>
+</html>

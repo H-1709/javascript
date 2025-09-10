@@ -1,0 +1,34 @@
+<!-- 9. Write a JavaScript function that adds a new paragraph element to the document body with the text of the user's choice, and then scrolls to the new paragraph. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Add & Scroll Paragraph</title>
+</head>
+<body>
+  <h2>Add a Paragraph & Scroll to It</h2>
+  <button onclick="addAndScroll()">Add Paragraph</button>
+
+  <script>
+    function addAndScroll() {
+      // Ask the user for text
+      let userText = prompt("Enter text for the new paragraph:");
+
+      if (userText && userText.trim() !== "") {
+        // Create a new paragraph
+        let p = document.createElement("p");
+        p.textContent = userText;
+
+        // Add it to the document body
+        document.body.appendChild(p);
+
+        // Scroll smoothly to the new paragraph
+        p.scrollIntoView({ behavior: "smooth" });
+      } else {
+        alert("You must enter some text!");
+      }
+    }
+  </script>
+</body>
+</html>

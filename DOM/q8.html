@@ -1,0 +1,29 @@
+<!-- 8. Write a JavaScript function that adds a new paragraph element to the document body with the text of the user's choice. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <input type="text" id="userText" placeholder="Enter your text">
+  <button onclick="addCustomParagraph()">Add Custom Paragraph</button>
+
+  <script>
+    function addCustomParagraph(){
+     let text= document.getElementById("userText").value;
+      if(text.trim()===""){
+        alert("Pleasee enter some Text");
+
+      }
+      let newPara=document.createElement("p");
+      newPara.textContent=text;
+
+      document.body.appendChild(newPara);
+      document.getElementById("userText").value="";
+
+    }  
+  </script>
+</body>
+</html
