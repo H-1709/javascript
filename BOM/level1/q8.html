@@ -1,0 +1,29 @@
+<!-- 8. Print browser name and version using navigator.userAgent.
+Answer:
+console.log("Browser Info:", navigator.userAgent); -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BOM Example - Browser Info</title>
+</head>
+<body>
+  <h2>BOM Example: Browser Info</h2>
+  <button onclick="showBrowserInfo()">Show Browser Info</button>
+
+  <p id="output"></p>
+
+  <script>
+    function showBrowserInfo() {
+      let info = navigator.userAgent;
+
+      // Log to console
+      console.log("Browser Info:", info);
+
+      // Show on page
+      document.getElementById("output").textContent = "Browser Info: " + info;
+    }
+  </script>
+</body>
+</html>

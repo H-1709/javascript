@@ -1,0 +1,23 @@
+<!-- 1. Create a button that opens a new window with specific width and height (400x300).**-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BOM Example - Open Custom Window</title>
+</head>
+<body>
+  <h2>BOM Example: Open Window with Custom Size</h2>
+
+  <!-- Button to open new window -->
+  <button onclick="openWindow()">Open Window</button>
+
+  <script>
+    function openWindow() {
+      // Opens example.com in a new popup window (400x300)
+      window.open("https://example.com", "_blank", "width=400,height=300");
+    }
+  </script>
+</body>
+</html>
