@@ -1,0 +1,29 @@
+<!-- 5. Print the current URL using location.href.
+Answer:
+console.log("Current URL is:", location.href); -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BOM Example - Current URL</title>
+</head>
+<body>
+  <h2>BOM Example: Show Current URL</h2>
+  <button onclick="showURL()">Show URL</button>
+
+  <p id="output"></p>
+
+  <script>
+    function showURL() {
+      let url = location.href;
+
+      // Print to console
+      console.log("Current URL is:", url);
+
+      // Show on the page
+      document.getElementById("output").textContent = "Current URL is: " + url;
+    }
+  </script>
+</body>
+</html>

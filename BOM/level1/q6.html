@@ -1,0 +1,26 @@
+<!-- 6. Reload the page when the user clicks a button.
+Answer (HTML):
+<button onclick="location.reload()">Reload Page</button> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BOM Example - Reload Page</title>
+</head>
+<body>
+  <h2>BOM Example: Reload Page</h2>
+
+  <!-- Button directly calls reload -->
+  <button onclick="location.reload()">Reload Page</button>
+
+  <!-- Another example using a function -->
+  <button onclick="reloadNow()">Reload via Function</button>
+
+  <script>
+    function reloadNow() {
+      location.reload();
+    }
+  </script>
+</body>
+</html>

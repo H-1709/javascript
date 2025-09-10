@@ -1,0 +1,33 @@
+<!-- 4. Display the width and height of the browser window using window\.innerWidth and innerHeight.
+Answer:
+console.log("Width:", window.innerWidth);
+console.log("Height:", window.innerHeight); -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Browser Window Size</title>
+</head>
+<body>
+  <h2>BOM Example: Window Width & Height</h2>
+  <button onclick="showSize()">Show Window Size</button>
+
+  <p id="output"></p>
+
+  <script>
+    function showSize() {
+      let width = window.innerWidth;
+      let height = window.innerHeight;
+
+      // Log to console
+      console.log("Width:", width);
+      console.log("Height:", height);
+
+      // Show on the page
+      document.getElementById("output").textContent =
+        "Browser window size → Width: " + width + "px, Height: " + height + "px";
+    }
+  </script>
+</body>
+</html>
