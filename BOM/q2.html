@@ -1,0 +1,32 @@
+<!-- 2. Ask the user for their age using prompt() and log it. 
+Answer: let age = prompt("Enter your age:"); 
+console.log("Your age is:", age); -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BOM Example - Prompt</title>
+</head>
+<body>
+  <h2>BOM Example: Prompt for Age</h2>
+  <button onclick="askAge()">Enter Age</button>
+
+  <script>
+    function askAge() {
+      // BOM prompt → asks user for input
+      let age = prompt("Enter your age:");
+
+      // Print result in console
+      console.log("Your age is:", age);
+
+      // Also show it on the page
+      if (age) {
+        let p = document.createElement("p");
+        p.textContent = "Your age is: " + age;
+        document.body.appendChild(p);
+      }
+    }
+  </script>
+</body>
+</html>

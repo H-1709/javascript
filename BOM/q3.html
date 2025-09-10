@@ -1,0 +1,28 @@
+
+<!-- 3. Use confirm() to ask “Do you want to continue?” and show result in alert.
+Answer:
+let result = confirm("Do you want to continue?");
+alert("User selected: " + result); -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BOM Confirm Example</title>
+</head>
+<body>
+  <h2>BOM Example: confirm()</h2>
+  <button onclick="askConfirm()">Click Me</button>
+
+  <script>
+    function askConfirm() {
+      // confirm() returns true (if OK) or false (if Cancel)
+      let result = confirm("Do you want to continue?");
+      
+      // Show result in alert
+      alert("User selected: " + result);
+    }
+  </script>
+</body>
+</html>
