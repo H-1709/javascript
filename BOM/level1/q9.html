@@ -1,0 +1,28 @@
+<!-- 9. Detect if the user is online or offline using navigator.onLine. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BOM Example - Online/Offline Detection</title>
+</head>
+<body>
+  <h2>BOM Example: Detect Online/Offline</h2>
+  <p id="status"></p>
+
+  <script>
+    function updateStatus() {
+      let statusText = navigator.onLine ? "✅ User is Online" : "❌ User is Offline";
+      console.log(statusText);
+      document.getElementById("status").textContent = statusText;
+    }
+
+    // Check status when page loads
+    updateStatus();
+
+    // Listen for changes (real-time detection)
+    window.addEventListener("online", updateStatus);
+    window.addEventListener("offline", updateStatus);
+  </script>
+</body>
+</html>

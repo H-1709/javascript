@@ -1,0 +1,30 @@
+<!-- 4. Store user's name in localStorage using prompt(), then greet the user using alert -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BOM Example - localStorage</title>
+</head>
+<body>
+  <h2>BOM Example: Save & Greet User</h2>
+  <button onclick="saveAndGreet()">Enter Name</button>
+
+  <script>
+    function saveAndGreet() {
+      // Ask for user name
+      let name = prompt("Enter your name:");
+
+      if (name && name.trim() !== "") {
+        // Save to localStorage
+        localStorage.setItem("user", name);
+
+        // Greet user
+        alert("Hello " + localStorage.getItem("user"));
+      } else {
+        alert("You didn’t enter a name!");
+      }
+    }
+  </script>
+</body>
+</html>
