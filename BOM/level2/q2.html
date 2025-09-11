@@ -1,0 +1,23 @@
+<!-- 2. Create a button that shows the current date and time in an alert when clicked.** -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BOM Example - Show Date & Time</title>
+</head>
+<body>
+  <h2>BOM Example: Show Current Date & Time</h2>
+
+  <!-- Button to trigger alert -->
+  <button onclick="showDateTime()">Show Time</button>
+
+  <script>
+    function showDateTime() {
+      // new Date() gives current date & time
+      // .toLocaleString() formats it according to system locale
+      alert("Current Date & Time: " + new Date().toLocaleString());
+    }
+  </script>
+</body>
+</html>

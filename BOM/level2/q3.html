@@ -1,0 +1,29 @@
+<!-- 3. Print the domain name and protocol of the current website. -->
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BOM Example - Domain & Protocol</title>
+</head>
+<body>
+  <h2>BOM Example: Domain & Protocol</h2>
+  <button onclick="showDomainProtocol()">Show Domain & Protocol</button>
+
+  <p id="output"></p>
+
+  <script>
+    function showDomainProtocol() {
+      let domain = location.hostname;   // e.g. "www.google.com"
+      let protocol = location.protocol; // e.g. "https:"
+
+      // Log in console
+      console.log("Domain:", domain);
+      console.log("Protocol:", protocol);
+
+      // Show on the page
+      document.getElementById("output").textContent =
+        "Domain: " + domain + " | Protocol: " + protocol;
+    }
+  </script>
+</body>
+</html>
