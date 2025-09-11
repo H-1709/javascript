@@ -1,0 +1,19 @@
+<!-- 5. When the window is resized, show the new width and height in the console -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Window Resize Example</title>
+</head>
+<body>
+  <h2>Resize the Browser Window</h2>
+  <p>Open the console to see updated width and height.</p>
+
+  <script>
+    window.addEventListener("resize", () => {
+      console.log("Width:", window.innerWidth, "Height:", window.innerHeight);
+    });
+  </script>
+</body>
+</html>
