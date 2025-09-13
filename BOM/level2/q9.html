@@ -1,0 +1,27 @@
+<!-- 9. Show an alert after 10 seconds if the user hasn’t clicked anywhere on the page. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Idle Alert</title>
+</head>
+<body>
+  <h2>Idle User Alert</h2>
+  <p>Don’t click for 10 seconds… 👀</p>
+
+  <script>
+    // Set a timer for 10 seconds
+    let idleTimer = setTimeout(() => {
+      alert("Are you still there? ⏳");
+    }, 10000);
+
+    // If user clicks anywhere, cancel the timer
+    document.addEventListener("click", () => {
+      clearTimeout(idleTimer);
+      console.log("User clicked, alert cancelled ✅");
+    });
+  </script>
+</body>
+</html>
