@@ -1,0 +1,32 @@
+<!-- 6. Show an alert only if the user is online, otherwise show a different alert.**-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online/Offline Alert</title>
+</head>
+<body>
+  <h2>Check Online/Offline Status</h2>
+
+  <script>
+    // Initial check when the page loads
+    if (navigator.onLine) {
+      alert("You are online! 🚀");
+    } else {
+      alert("You are offline 😢");
+    }
+
+    // Listen for online status
+    window.addEventListener("online", () => {
+      alert("You are back online! 🎉");
+    });
+
+    // Listen for offline status
+    window.addEventListener("offline", () => {
+      alert("Oops! You went offline ⚠️");
+    });
+  </script>
+</body>
+</html>
