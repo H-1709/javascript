@@ -1,0 +1,31 @@
+<!-- 7. Create a countdown from 5 to 0 using setInterval() and stop after reaching 0. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Countdown Example</title>
+</head>
+<body>
+  <h2>Countdown Timer</h2>
+  <p id="countdown"></p>
+
+  <script>
+    let count = 5; // starting number
+    let display = document.getElementById("countdown");
+
+    display.textContent = count;
+
+    let timer = setInterval(() => {
+      count--;
+      display.textContent = count;
+
+      if (count === 0) {
+        clearInterval(timer); // stop when 0 is reached
+        alert("Countdown finished! 🎉");
+      }
+    }, 1000); // runs every 1 second
+  </script>
+</body>
+</html>
