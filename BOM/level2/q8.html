@@ -1,0 +1,39 @@
+
+<!-- 8. Save and retrieve the current URL in sessionStorage. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Save & Retrieve URL</title>
+</head>
+<body>
+  <h2>Save and Retrieve Current URL</h2>
+  <button id="saveBtn">Save URL</button>
+  <button id="getBtn">Get URL</button>
+  <p id="output"></p>
+
+  <script>
+    const saveBtn = document.getElementById("saveBtn");
+    const getBtn = document.getElementById("getBtn");
+    const output = document.getElementById("output");
+
+    // Save current URL in sessionStorage
+    saveBtn.addEventListener("click", () => {
+      sessionStorage.setItem("currentPage", window.location.href);
+      alert("URL saved in sessionStorage ✅");
+    });
+
+    // Retrieve saved URL
+    getBtn.addEventListener("click", () => {
+      let savedURL = sessionStorage.getItem("currentPage");
+      if (savedURL) {
+        output.textContent = "Saved URL: " + savedURL;
+      } else {
+        output.textContent = "No URL saved yet!";
+      }
+    });
+  </script>
+</body>
+</html>
