@@ -1,0 +1,49 @@
+<!-- 11. Store your name in localStorage and retrieve it.
+Answer:
+localStorage.setItem("name", "Manav");
+alert("Stored Name: " + localStorage.getItem("name")); -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>localStorage Example</title>
+</head>
+<body>
+  <h2>Store and Retrieve Name</h2>
+
+  <input type="text" id="nameInput" placeholder="Enter your name">
+  <button id="saveBtn">Save Name</button>
+  <button id="getBtn">Get Name</button>
+
+  <p id="output"></p>
+
+  <script>
+    const saveBtn = document.getElementById("saveBtn");
+    const getBtn = document.getElementById("getBtn");
+    const output = document.getElementById("output");
+
+    // Save name in localStorage
+    saveBtn.addEventListener("click", () => {
+      let name = document.getElementById("nameInput").value;
+      if (name) {
+        localStorage.setItem("name", name);
+        alert("Name saved ✅");
+      } else {
+        alert("Please enter a name first!");
+      }
+    });
+
+    // Retrieve name from localStorage
+    getBtn.addEventListener("click", () => {
+      let savedName = localStorage.getItem("name");
+      if (savedName) {
+        output.textContent = "Stored Name: " + savedName;
+      } else {
+        output.textContent = "No name stored yet!";
+      }
+    });
+  </script>
+</body>
+</html>
