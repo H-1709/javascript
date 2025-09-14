@@ -1,0 +1,29 @@
+<!-- 
+10. Detect if the browser is Chrome using the userAgent and show an alert accordingly.
+Answer:
+if (navigator.userAgent.includes("Chrome")) {
+  alert("You're using Chrome!");
+} else {
+  alert("You are not using Chrome.");
+} -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detect Chrome</title>
+</head>
+<body>
+  <script>
+    let ua = navigator.userAgent;
+
+    if (ua.includes("Chrome") && !ua.includes("Edg") && !ua.includes("OPR")) {
+      alert("✅ You're using Google Chrome!");
+    } else {
+      alert("❌ You are NOT using Chrome.");
+    }
+  </script>
+</body>
+</html>
