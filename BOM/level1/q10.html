@@ -1,0 +1,26 @@
+<!-- 
+10. Show an alert when the window is resized.
+Answer:
+window.onresize = () => {
+  alert("You resized the window!");
+};
+ -->
+
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resize Alert</title>
+</head>
+<body>
+  <h2>Resize the Window</h2>
+
+  <script>
+    window.addEventListener("resize", () => {
+      alert(`Window resized! 📐\nWidth: ${window.innerWidth}, Height: ${window.innerHeight}`);
+    });
+  </script>
+</body>
+</html>
