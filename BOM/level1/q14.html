@@ -1,0 +1,25 @@
+<!-- 14. Navigate to another page using location.href.
+location.href = "https://www.example.com"; -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navigate with JavaScript</title>
+</head>
+<body>
+  <h1>Navigation Example</h1>
+  <p>Click the button below to go to another page:</p>
+
+  <button onclick="goToPage()">Go to Example.com</button>
+
+  <script>
+    // Function that redirects user to another website
+    function goToPage() {
+      // location.href is used to change the current page URL
+      location.href = "https://www.example.com";
+    }
+  </script>
+</body>
+</html>
