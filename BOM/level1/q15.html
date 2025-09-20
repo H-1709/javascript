@@ -1,0 +1,28 @@
+<!-- 15. Show the screen resolution using the screen object. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Screen Resolution Example</title>
+</head>
+<body>
+  <h1>Check Your Screen Resolution</h1>
+  <p id="resolution"></p>
+
+  <script>
+    // Get screen resolution using screen object
+    const width = screen.width;
+    const height = screen.height;
+
+    // Show in console
+    console.log("Screen Width:", width);
+    console.log("Screen Height:", height);
+
+    // Show on webpage
+    document.getElementById("resolution").innerText =
+      "Your Screen Resolution is: " + width + " x " + height;
+  </script>
+</body>
+</html>
