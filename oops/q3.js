@@ -17,13 +17,41 @@
 // Product structure example:
 // { id: 1, name: "Laptop", price: 50000, stock: 5 }
 
+
+
+
+
+// 4. Complex Validation Rules:
+
+// Implement additional validation rules for specific scenarios:
+
+// User cannot register with an existing username.
+// Products with zero quantity cannot be added to the cart.
+// Only logged-in users can add items to their cart.
+// Minimum order amount requirement for checkout.
+// Offer discount based on specific criteria (e.g., product category, order value).
+
 class Cart {
-  constructor() {
+  constructor(user) {
+    this.user = user; // { id, name, isLoggedIn }
     this.items = []; // Each item = { product, quantity }
+    this.totalQuantity = 0;
+    this.totalPrice = 0;
+    this.discount = 0;
   }
 
   // ✅ Add product to cart
   addProduct(product, quantity) {
+    if (!this.user.isLoggedIn) {
+      console.log("❌ Please log in to add items to your cart.");
+      return;
+    }
+
+    if (product.stock === 0) {
+      console.log(`❌ ${product.name} is out of stock.`);
+      return;
+    }
+
     if (quantity > product.stock) {
       console.log(`❌ Not enough stock for ${product.name}`);
       return;
@@ -32,7 +60,6 @@ class Cart {
     let existingItem = this.items.find(item => item.product.id === product.id);
 
     if (existingItem) {
-      // Update quantity if already in cart
       if (existingItem.quantity + quantity <= product.stock) {
         existingItem.quantity += quantity;
       } else {
@@ -41,6 +68,7 @@ class Cart {
     } else {
       this.items.push({ product, quantity });
     }
+
     this.calculateTotals();
   }
 
@@ -63,10 +91,28 @@ class Cart {
     this.calculateTotals();
   }
 
-  // ✅ Calculate totals
+  // ✅ Calculate totals & apply discount rules
   calculateTotals() {
     this.totalQuantity = this.items.reduce((sum, item) => sum + item.quantity, 0);
     this.totalPrice = this.items.reduce((sum, item) => sum + item.quantity * item.product.price, 0);
+
+    // 🎁 Apply discount rules
+    this.discount = 0;
+    if (this.totalPrice > 2000) {
+      this.discount = this.totalPrice * 0.10; // 10% discount above ₹2000
+    }
+    if (this.items.some(item => item.product.category === "Electronics")) {
+      this.discount += 500; // Extra ₹500 off if Electronics in cart
+    }
+  }
+
+  // ✅ Checkout validation
+  checkout(minOrderAmount = 500) {
+    if (this.totalPrice < minOrderAmount) {
+      console.log(`❌ Minimum order amount is ₹${minOrderAmount}.`);
+      return;
+    }
+    console.log(`✅ Checkout successful! Final Price: ₹${this.totalPrice - this.discount}`);
   }
 
   // ✅ Display cart contents
@@ -76,15 +122,19 @@ class Cart {
       console.log(`${item.product.name} - ${item.quantity} x ₹${item.product.price}`)
     );
     console.log(`👉 Total Quantity: ${this.totalQuantity}, Total Price: ₹${this.totalPrice}`);
+    console.log(`🎁 Discount Applied: ₹${this.discount}`);
+    console.log(`💰 Final Price: ₹${this.totalPrice - this.discount}`);
   }
 }
 
 // ----------------- Testing -----------------
-const product1 = { id: 1, name: "Laptop", price: 50000, stock: 5 };
-const product2 = { id: 2, name: "Phone", price: 20000, stock: 10 };
-const product3 = { id: 3, name: "Headphones", price: 2000, stock: 15 };
+const product1 = { id: 1, name: "Laptop", price: 50000, stock: 5, category: "Electronics" };
+const product2 = { id: 2, name: "Phone", price: 20000, stock: 10, category: "Electronics" };
+const product3 = { id: 3, name: "Headphones", price: 2000, stock: 15, category: "Accessories" };
 
-let myCart = new Cart();
+let user = { id: 1, name: "Hir", isLoggedIn: true };
+
+let myCart = new Cart(user);
 
 myCart.addProduct(product1, 2);  // Add 2 Laptops
 myCart.addProduct(product2, 3);  // Add 3 Phones
@@ -96,3 +146,5 @@ myCart.showCart();
 
 myCart.removeProduct(1); // Remove Laptop
 myCart.showCart();
+
+myCart.checkout(); // ✅ Try checkout with min amount rule
